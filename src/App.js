@@ -22,10 +22,18 @@ function App() {
     { title: "title 5", answer: "5" }
   ]
 
+  const arr = [
+    { pno: 1, pname: "Product...01", price: 3000, amount: 0 },
+    { pno: 2, pname: "Product...02", price: 4000, amount: 0 },
+    { pno: 3, pname: "Product...03", price: 5000, amount: 0 },
+    { pno: 4, pname: "Product...04", price: 6000, amount: 0 },
+    { pno: 5, pname: "Product...05", price: 7000, amount: 0 }
+]
+
   return (
     <div className="App">
       <header className="App-header">
-      <ItemComponent></ItemComponent>
+      <ItemComponent arr={arr}></ItemComponent>
       {/* <QuizComponent quizArr={arr1}></QuizComponent>
       <QuizComponent quizArr={arr2}></QuizComponent> */}
       </header>

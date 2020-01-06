@@ -1,24 +1,27 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import ItemList from './ItemList'
 import ItemTotal from './ItemTotal'
 
-const ItemComponent = () => {
+const ItemComponent = ({arr}) => {
 
-    const items = [
-        {pno: 1, pname: "Product...01", price: 3000},
-        {pno: 2, pname: "Product...02", price: 4000},
-        {pno: 3, pname: "Product...03", price: 5000},
-        {pno: 4, pname: "Product...04", price: 6000},
-        {pno: 5, pname: "Product...05", price: 7000}
-    ]
+    const [total, setTotal] = useState(0)
+
+    const [items, setItems] = useState(arr)
+
+    const changeItemAmount = (pno, amount) => {
+        items.find(item => item.pno === pno).amount = amount
+        setItems(items)
+        let total = items.reduce((sum, item) => sum + item.price * item.amount, 0)
+        setTotal(total)
+    }
 
     return (
         <div>
             <h1>Item Component</h1>
             <hr></hr>
-            <ItemList arr={items}></ItemList>
+            <ItemList arr={items} fn={changeItemAmount}></ItemList>
             <hr></hr>
-            <ItemTotal></ItemTotal>
+            <ItemTotal total={total}></ItemTotal>
         </div>
     )
 }
