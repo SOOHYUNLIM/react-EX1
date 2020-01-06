@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import QuizComponent from './components/day1/quiz/QuizComponent';
+import LoopEx from './components/day3/LoopEx';
+import ItemComponent from './components/day3/ItemComponent';
 
 function App() {
 
@@ -23,8 +25,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <QuizComponent quizArr={arr1}></QuizComponent>
-      <QuizComponent quizArr={arr2}></QuizComponent>
+      <ItemComponent></ItemComponent>
+      {/* <QuizComponent quizArr={arr1}></QuizComponent>
+      <QuizComponent quizArr={arr2}></QuizComponent> */}
       </header>
     </div>
   );
